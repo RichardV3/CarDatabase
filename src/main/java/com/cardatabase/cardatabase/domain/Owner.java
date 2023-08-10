@@ -14,48 +14,35 @@ import jakarta.persistence.OneToMany;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer",
-"handler"})
-public class Owner 
+        "handler"})
+public class Owner
 {
- 
-	
- private @Id long ownerid;
- @GeneratedValue(strategy=GenerationType.AUTO)
- private String firstname, lastname;
-
- @JsonIgnore
-
- @OneToMany(cascade=CascadeType.ALL, mappedBy="owner")
- private List<Car> cars;
-
- public List<Car> getCars() {
-  return cars;
- }
-
- public void setCars(List<Car> cars) {
-  this.cars = cars;
- }
 
 
+    private @Id long ownerid;
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private String firstname, lastname;
 
+    @JsonIgnore
 
-public Owner() {
-	super();
-	// TODO Auto-generated constructor stub
-}
+    @OneToMany(cascade=CascadeType.ALL, mappedBy="owner")
+    private List<Car> cars;
+
+    public List<Car> getCars() {
+        return cars;
+    }
+
+    public void setCars(List<Car> cars) {
+        this.cars = cars;
+    }
 
 
 
 
-
-
-
-public Owner(long ownerid, String firstname, String lastname) {
-	super();
-	this.ownerid = ownerid;
-	this.firstname = firstname;
-	this.lastname = lastname;
-}
+    public Owner() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 
 
@@ -63,9 +50,12 @@ public Owner(long ownerid, String firstname, String lastname) {
 
 
 
-public long getOwnerid() {
-	return ownerid;
-}
+    public Owner(long ownerid, String firstname, String lastname) {
+        super();
+        this.ownerid = ownerid;
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
 
 
 
@@ -73,9 +63,9 @@ public long getOwnerid() {
 
 
 
-public void setOwnerid(long ownerid) {
-	this.ownerid = ownerid;
-}
+    public long getOwnerid() {
+        return ownerid;
+    }
 
 
 
@@ -83,9 +73,9 @@ public void setOwnerid(long ownerid) {
 
 
 
-public String getFirstname() {
-	return firstname;
-}
+    public void setOwnerid(long ownerid) {
+        this.ownerid = ownerid;
+    }
 
 
 
@@ -93,9 +83,9 @@ public String getFirstname() {
 
 
 
-public void setFirstname(String firstname) {
-	this.firstname = firstname;
-}
+    public String getFirstname() {
+        return firstname;
+    }
 
 
 
@@ -103,9 +93,9 @@ public void setFirstname(String firstname) {
 
 
 
-public String getLastname() {
-	return lastname;
-}
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
 
 
 
@@ -113,11 +103,21 @@ public String getLastname() {
 
 
 
-public void setLastname(String lastname) {
-	this.lastname = lastname;
-}
+    public String getLastname() {
+        return lastname;
+    }
 
 
-	
-	
+
+
+
+
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+
+
+
 }
